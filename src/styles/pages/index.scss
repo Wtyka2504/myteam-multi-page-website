@@ -1,0 +1,49 @@
+@import "/src/styles/main.scss";
+@import "/src/styles//utils/animations.scss";
+
+.hero {
+	background: url("/src/assets/images/bg-pattern-home-1.svg") left -100px center/auto
+			no-repeat,
+		url("/src/assets/images/bg-pattern-home-2.svg") right 25% bottom/auto
+			no-repeat;
+}
+
+.about {
+	background: url("/src/assets/images/bg-pattern-home-3.svg") right -100px bottom/auto
+			no-repeat,
+		var(--state-green);
+}
+
+.team {
+	background: url("/src/assets/images/bg-pattern-home-4-about-3.svg") top
+			left/auto no-repeat,
+		url("/src/assets/images/bg-pattern-home-5.svg") bottom right/auto no-repeat,
+		var(--jungle-green);
+	@at-root {
+		&__quotes {
+			background: url("/src/assets/images/icon-quotes.svg") top center/auto
+				no-repeat;
+		}
+	}
+}
+
+@screen lg-max {
+	.hero {
+		background: url("/src/assets/images/bg-pattern-home-2.svg") bottom
+			center/auto no-repeat;
+	}
+	.about {
+		background: url("/src/assets/images/bg-pattern-home-3.svg") right -100px top/auto
+				no-repeat,
+			var(--state-green);
+	}
+}
+// TABLET
+
+// MOBILE
+@screen sm-max {
+	.hero {
+		background: url("/src/assets/images/bg-pattern-home-2.svg") bottom
+			center/100% auto no-repeat;
+	}
+}

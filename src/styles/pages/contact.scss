@@ -1,0 +1,12 @@
+.contact {
+	background: url("/src/assets/images/bg-pattern-about-2-contact-1.svg") left -100px
+			top/auto no-repeat,
+		url("/src/assets/images/bg-pattern-contact-2.svg") right -100px bottom/auto no-repeat;
+}
+
+@screen sm-max {
+	.contact {
+		background: url("/src/assets/images/bg-pattern-contact-2.svg") right -100px bottom/auto
+			no-repeat;
+	}
+}

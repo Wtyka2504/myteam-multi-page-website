@@ -1,0 +1,14 @@
+@screen sm-max {
+	.nav {
+		@at-root {
+			&__wrapper:not(.active) {
+				display: none;
+			}
+			&__wrapper-inner {
+				background: url("/src/assets/images/bg-pattern-about-1-mobile-nav-1.svg")
+						right -100px bottom/ auto no-repeat,
+					var(--police-blue);
+			}
+		}
+	}
+}

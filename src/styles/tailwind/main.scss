@@ -1,0 +1,165 @@
+@import "./colors";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		font-size: 10px;
+		--global-nav-height: 151px;
+		--global-screen-height: calc(100vh - var(--global-nav-height));
+		--white: #{$white};
+		--black: #{$black};
+		--midnight: #{$midnight};
+		--coral: #{$coral};
+		--rapture-blue: #{$rapture-blue};
+		--police-blue: #{$police-blue};
+		--jungle-green: #{$jungle-green};
+		--state-green: #{$state-green};
+		--dark-green: #{$dark-green};
+	}
+	*,
+	*::before,
+	*::after {
+		font-family: "Livvic";
+		font-weight: 600;
+	}
+
+	body {
+		font-size: 1.6rem;
+		color: var(--white);
+		background-color: var(--midnight);
+	}
+
+	blockquote::before {
+		content: "\201C";
+	}
+
+	blockquote::after {
+		content: "\201D";
+	}
+	@media (max-width: 1024px) {
+		:root {
+			--global-nav-height: 91px;
+		}
+	}
+}
+
+@layer components {
+	.btn {
+		display: block;
+		font-size: 1.8rem;
+		font-weight: 600;
+		padding: 1rem 3.2rem;
+		border-radius: 2.4rem;
+		border: 2px solid var(--white);
+		transition: 250ms ease-in-out background-color, 250ms ease-in-out color,
+			border-color 250ms ease-in-out;
+		cursor: pointer;
+		&:hover {
+			background-color: var(--white);
+			color: var(--dark-green);
+		}
+		&.disabled {
+			opacity: 0.5;
+		}
+		@at-root {
+			&--dark {
+				border-color: var(--state-green);
+				color: var(--state-green);
+				&:hover {
+					color: var(--white);
+					background-color: var(--state-green);
+				}
+			}
+			&--secondary {
+				background-color: var(--white);
+				color: var(--state-green);
+				&:hover {
+					background-color: var(--rapture-blue);
+					border-color: var(--rapture-blue);
+				}
+			}
+		}
+	}
+
+	.decoration-line {
+		width: 50px;
+		height: 4px;
+		background-color: var(--rapture-blue);
+		&--coral {
+			background-color: var(--coral);
+		}
+	}
+
+	.block-text {
+		max-width: 445px;
+	}
+	.label {
+		@apply block pl-4 relative;
+	}
+	.label-text {
+		@apply absolute text-base text-gray-400 top-1/2 -translate-y-1/2 left-12 pointer-events-none;
+		transition: top 250ms ease-in-out, left 250ms ease-in-out,
+			transform 250ms ease-in-out;
+	}
+	.input:focus + .label-text,
+	.input:not(:placeholder-shown) + .label-text,
+	.textarea:focus + .label-text,
+	.textarea:not(:placeholder-shown) + .label-text {
+		@apply top-0 -translate-y-1/4 left-0;
+	}
+	.input {
+		@apply w-full p-8 text-base;
+		--bg: var(--rapture-blue);
+		outline: none;
+		background: {
+			color: transparent;
+			image: linear-gradient(to right, var(--bg), var(--bg)),
+				linear-gradient(to right, var(--white), var(--white));
+			size: 0% 2px, 100% 2px;
+			position: bottom center;
+			repeat: no-repeat, no-repeat;
+		}
+		transition: 250ms ease-in-out background-size;
+		&:focus {
+			background-size: 100% 2px, 100% 2px;
+		}
+		&.wrong {
+			--bg: crimson;
+			background-size: 100% 2px, 100% 2px;
+			color: crimson;
+		}
+	}
+	.textarea {
+		@apply w-full p-8;
+		--bg: var(--rapture-blue);
+		resize: none;
+		outline: none;
+		background: {
+			color: transparent;
+			image: linear-gradient(to right, var(--bg), var(--bg)),
+				linear-gradient(to right, var(--white), var(--white));
+			size: 0% 2px, 100% 2px;
+			position: bottom center;
+			repeat: no-repeat, no-repeat;
+		}
+		transition: 250ms ease-in-out background-size;
+		&::-webkit-scrollbar {
+			width: 5px;
+			background-color: rgba(255, 255, 255, 0.2);
+			border-radius: 2rem;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--coral);
+		}
+		&:focus {
+			background-size: 100% 2px, 100% 2px;
+		}
+		&.wrong {
+			--bg: crimson;
+			background-size: 100% 2px, 100% 2px;
+			color: crimson;
+		}
+	}
+}

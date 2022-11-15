@@ -1,0 +1,68 @@
+.hero {
+	background: url("/src/assets/images/bg-pattern-about-1-mobile-nav-1.svg")
+		right -100px bottom/auto no-repeat;
+}
+.directors {
+	background: url("/src//assets/images/bg-pattern-about-2-contact-1.svg") left -100px
+			top/auto no-repeat,
+		url("/src//assets/images/bg-pattern-home-4-about-3.svg") bottom right/auto
+			no-repeat,
+		var(--jungle-green);
+	@at-root {
+		&__item {
+			@apply relative;
+			&.active {
+				.directors__item-inner {
+					transform: rotateY(180deg);
+				}
+				.directors__btn {
+					background-color: var(--rapture-blue);
+				}
+				.directors__cross {
+					transform: rotateZ(45deg);
+				}
+			}
+		}
+		&__item-inner {
+			transition: 500ms ease-in-out transform;
+		}
+		&__btn-wrapper {
+			@apply absolute icon-lg bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2;
+		}
+		&__btn {
+			@apply flex justify-center items-center w-full h-full bg-coral rounded-full;
+			background-color: var(--coral);
+			transition: 300ms ease-in-out background-color;
+		}
+		&__cross {
+			width: 25%;
+			transition: 300ms ease-in-out transform;
+		}
+	}
+}
+
+.clients {
+	background: url("/src/assets/images/bg-pattern-home-3.svg") left top/auto
+			no-repeat,
+		var(--state-green);
+}
+
+@screen sm-max {
+	.hero {
+		background: url("/src/assets/images/bg-pattern-about-1-mobile-nav-1.svg")
+			right -100px bottom -100px / auto no-repeat;
+	}
+	.directors {
+		background: url("/src//assets/images/bg-pattern-about-2-contact-1.svg") left -100px
+				top -100px / auto no-repeat,
+			url("/src//assets/images/bg-pattern-home-4-about-3.svg") bottom right/auto
+				no-repeat,
+			var(--jungle-green);
+	}
+
+	.clients {
+		background: url("/src/assets/images/bg-pattern-home-3.svg") left -100px top -100px /
+				auto no-repeat,
+			var(--state-green);
+	}
+}
