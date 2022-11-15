@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/src/assets/images/favicon-32x32.png"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:image" content="/public/preview.jpg" />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="900" />
+		<meta property="og:image:height" content="660" />
+		<meta property="og:image:alt" content="My team - project" />
+		<title>My team</title>
+		<link rel="stylesheet" href="/src/styles/pages/index.scss" />
+		<script type="module" src="/src/main.ts" defer></script>
+		<script type="module" src="/src/index.ts" defer></script>
+	</head>
+	<body>
+		<header class="py-28 pb-14 bg-midnight sticky top-0 z-40">
+			<nav
+				class="nav container max-w-screen-lg flex items-center justify-between js-nav"
+			>
+				<!-- BRAND -->
+				<a href="/index.html">
+					<img src="/src/assets/images/logo.svg" alt="Logo" />
+				</a>
+				<!-- WRAPPER -->
+				<div
+					class="flex grow sm-max:justify-end sm-max:items-stretch sm-max:absolute sm-max:top-0 sm-max:left-0 sm-max:h-screen sm-max:w-full sm-max:bg-black sm-max:bg-opacity-80 nav__wrapper js-nav-wrapper overflow-hidden"
+				>
+					<!-- WRAPPER INNER -->
+					<div
+						class="flex justify-between items-center grow sm-max:grow-0 sm-max:flex-col sm-max:justify-start sm-max:items-stretch sm-max:space-y-14 sm-max:py-20 sm-max:px-20 sm-max:translate-x-full nav__wrapper-inner js-nav-wrapper-inner"
+					>
+						<button class="sm:hidden ml-auto js-nav-hide">
+							<img
+								src="/src/assets/images/icon-close.svg"
+								alt="Mobile nav close button"
+							/>
+						</button>
+						<!-- LINKS -->
+						<ul
+							class="list-none flex text-base md:px-32 sm:space-x-16 sm:px-16 sm-max:flex-col sm-max:space-y-10"
+						>
+							<li class="hover:text-coral text-coral">
+								<a href="/index.html">home</a>
+							</li>
+							<li class="hover:text-coral">
+								<a href="/pages/about.html">about</a>
+							</li>
+						</ul>
+						<a href="/pages/contact.html">
+							<button class="btn">Contact us</button>
+						</a>
+					</div>
+				</div>
+				<button type="button" class="sm:hidden js-nav-show">
+					<img
+						class="w-8"
+						src="/src/assets/images/icon-hamburger.svg"
+						alt="Mobile nav open button"
+					/>
+				</button>
+			</nav>
+		</header>
+
+		<main class="overflow-hidden">
+			<!-- HERO -->
+			<section class="hero js-hero">
+				<div class="container max-w-screen-lg py-96 sm-max:py-72 sm-max:pt-20">
+					<div
+						class="flex md-max:flex-col md-max:space-y-10 md-max:text-center md-max:items-center md:justify-between"
+					>
+						<h1 class="text-2xl md-max:text-2xl js-hero-header">
+							Find the<br />best
+							<span class="text-coral font-bold">talent</span>
+						</h1>
+						<div class="flex flex-col justify-between max-w-445 js-hero-text">
+							<div class="decoration-line mb-16 md-max:hidden"></div>
+							<p class="md-max:text-sm">
+								Finding the right people and building high performing teams can
+								be hard. Most companies aren't tapping into the abundance of
+								global talent. We're about to change that.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ABOUT -->
+			<section class="about js-about">
+				<div class="container max-w-screen-lg py-56">
+					<div
+						class="decoration-line decoration-line--coral mb-20 js-about-line"
+					></div>
+					<div class="flex justify-between md-max:flex-col md-max:space-y-24">
+						<div class="flex flex-col js-about-text">
+							<h2 class="text-xl max-w-445 md-max:text-l xsm-max:max-w-240">
+								Build & manage distributed teams like no one else.
+							</h2>
+						</div>
+						<ul class="space-y-12 max-w-1/2 md-max:max-w-1 js-about-list">
+							<li>
+								<div class="flex items-start space-x-8">
+									<img src="/src/assets/images/icon-person.svg" alt="" />
+									<div class="flex flex-col space-y-6">
+										<h3 class="text-coral text-base">
+											Experienced Individuals
+										</h3>
+										<p class="text-sm">
+											Our network is made up of highly experienced professionals
+											who are passionate about what they do.
+										</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="flex items-start space-x-8">
+									<img src="/src/assets/images/icon-cog.svg" alt="" />
+									<div class="flex flex-col space-y-6">
+										<h3 class="text-coral text-base">Easy to Implement</h3>
+										<p class="text-sm">
+											Our processes have been refined over years of
+											implementation meaning our teams always deliver.
+										</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="flex items-start space-x-8">
+									<img src="/src/assets/images/icon-chart.svg" alt="" />
+									<div class="flex flex-col space-y-6">
+										<h3 class="text-coral text-base">Enhanced Productivity</h3>
+										<p class="text-sm">
+											Our customized platform with in-built analytics helps you
+											manage your distributed teams.
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!-- TEAM -->
+			<section class="team js-team">
+				<div class="container max-w-screen-lg py-56 space-y-20">
+					<h2 class="text-xl text-center md-max:text-l js-team-header">
+						Delivering real results for top companies. Some of our
+						<span class="text-rapture-blue">success stories.</span>
+					</h2>
+					<ul
+						class="grid grid-cols-3 gap-12 md-max:grid-cols-1 md-max:gap-6 js-team-list"
+					>
+						<li class="flex flex-col space-y-10 py-12 text-center team__quotes">
+							<p>
+								“The team perfectly fit the specialized skill set required. They
+								focused on the most essential features helping us launch the
+								platform eight months faster than planned.”
+							</p>
+							<div class="!mt-auto">
+								<h3 class="text-rapture-blue text-base font-bold">
+									Kady Baker
+								</h3>
+								<p class="text-xsm"><i>Product Manager at Bookmark</i></p>
+							</div>
+							<img
+								class="avatar mx-auto"
+								src="/src/assets/images/avatar-kady.jpg"
+								alt="Oval image"
+							/>
+						</li>
+						<li class="flex flex-col space-y-10 py-12 text-center team__quotes">
+							<p>
+								“We needed to automate our entire onboarding process. The team
+								came in and built out the whole journey. Since going live, user
+								retention has gone through the roof!”
+							</p>
+							<div class="!mt-auto">
+								<h3 class="text-rapture-blue text-base font-bold">
+									Aiysha Reese
+								</h3>
+								<p class="text-xsm"><i>Founder of Manage</i></p>
+							</div>
+							<img
+								class="avatar mx-auto"
+								src="/src/assets/images/avatar-aiysha.jpg"
+								alt="Oval image"
+							/>
+						</li>
+						<li class="flex flex-col space-y-10 py-12 text-center team__quotes">
+							<p>
+								“Amazing. Our team helped us build an app that delivered a new
+								experience for hiring a physio. The launch was an instant
+								success with 100k downloads in the first month.”
+							</p>
+							<div class="!mt-auto">
+								<h3 class="text-rapture-blue text-base font-bold">
+									Arthur Clarke
+								</h3>
+								<p class="text-xsm"><i>Co-founder of MyPhysio</i></p>
+							</div>
+							<img
+								class="avatar mx-auto"
+								src="/src/assets/images/avatar-arthur.jpg"
+								alt="Oval image"
+							/>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- GET STARTED -->
+			<section class="get-started bg-coral py-32">
+				<div class="container max-w-screen-lg">
+					<div
+						class="flex justify-between sm-max:flex-col sm-max:items-center sm-max:space-y-10"
+					>
+						<h2 class="text-xl text-state-green md-max:text-l">
+							Ready to get started?
+						</h2>
+						<a href="/pages/contact.html">
+							<button class="btn btn--dark">contact us</button>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer bg-dark-green py-20">
+			<div class="container max-w-screen-lg">
+				<div
+					class="grid gap-x-48 grid-cols-footer-desktop grid-rows-footer-desktop md-max:grid-cols-2 md-max:gap-x-4 md-max:gap-y-12 sm-max:grid-cols-1 sm-max:place-items-center"
+				>
+					<!-- Links -->
+					<div class="flex flex-col space-y-10 md:row-start-1 md:row-end-3">
+						<a href="/index.html">
+							<img
+								class="h-16 mr-auto md-max:h-10 sm-max:mx-auto"
+								src="/src/assets/images/logo.svg"
+								alt="Logo"
+							/>
+						</a>
+						<ul class="list-none flex space-x-16">
+							<li class="hover:text-coral text-coral">
+								<a href="/index.html">home</a>
+							</li>
+							<li class="hover:text-coral">
+								<a href="/pages/about.html">about</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Contact -->
+					<div
+						class="opacity-60 text-sm md-max:flex md-max:justify-end items-end md-max:text-right md:row-start-1 md:row-end-3 sm-max:text-center"
+					>
+						<p>
+							987 Hillcrest Lane<br />Irvine, CA<br />California 92714<br />Call
+							Us : 949-833-7432
+						</p>
+					</div>
+					<!-- Social icons -->
+					<ul
+						class="list-none flex place-content-end space-x-6 md-max:place-content-start"
+					>
+						<li>
+							<a href="#">
+								<img
+									class="w-10 h-10"
+									src="/src/assets/images/icon-facebook.svg"
+									alt="Icon facebook"
+								/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img
+									class="w-10 h-10"
+									src="/src/assets/images/icon-pinterest.svg"
+									alt="Icon pinterest"
+								/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img
+									class="w-10 h-10"
+									src="/src/assets/images/icon-twitter.svg"
+									alt="Icon twitter"
+								/>
+							</a>
+						</li>
+					</ul>
+					<!-- Copyright -->
+					<div
+						class="flex place-items-end place-content-end text-sm text-center font-semibold opacity-60 sm:text-right md:col-start-3"
+					>
+						<p>Copyright 2020. All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
