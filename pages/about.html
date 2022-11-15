@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/src/assets/images/favicon-32x32.png"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:image" content="/public/preview.jpg" />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="900" />
+		<meta property="og:image:height" content="660" />
+		<meta property="og:image:alt" content="My team - project" />
+		<title>My team - About</title>
+		<link rel="stylesheet" href="/src/styles/pages/about.scss" />
+		<script type="module" src="/src/main.ts"></script>
+		<script type="module" src="/src/about.ts"></script>
+	</head>
+	<body>
+		<header class="py-28 pb-14 bg-midnight sticky top-0 z-40">
+			<nav
+				class="nav container max-w-screen-lg flex items-center justify-between js-nav"
+			>
+				<!-- BRAND -->
+				<a href="/index.html">
+					<img src="/src/assets/images/logo.svg" alt="Logo" />
+				</a>
+				<!-- WRAPPER -->
+				<div
+					class="flex grow sm-max:justify-end sm-max:items-stretch sm-max:absolute sm-max:top-0 sm-max:left-0 sm-max:h-screen sm-max:w-full sm-max:bg-black sm-max:bg-opacity-80 nav__wrapper js-nav-wrapper overflow-hidden"
+				>
+					<!-- WRAPPER INNER -->
+					<div
+						class="flex justify-between items-center grow sm-max:grow-0 sm-max:flex-col sm-max:justify-start sm-max:items-stretch sm-max:space-y-14 sm-max:py-20 sm-max:px-20 sm-max:translate-x-full nav__wrapper-inner js-nav-wrapper-inner"
+					>
+						<button class="sm:hidden ml-auto js-nav-hide">
+							<img
+								src="/src/assets/images/icon-close.svg"
+								alt="Mobile nav close button"
+							/>
+						</button>
+						<!-- LINKS -->
+						<ul
+							class="list-none flex text-base md:px-32 sm:space-x-16 sm:px-16 sm-max:flex-col sm-max:space-y-10"
+						>
+							<li class="hover:text-coral">
+								<a href="/index.html">home</a>
+							</li>
+							<li class="hover:text-coral text-coral">
+								<a href="/pages/about.html">about</a>
+							</li>
+						</ul>
+						<a href="/pages/contact.html">
+							<button class="btn">Contact us</button>
+						</a>
+					</div>
+				</div>
+				<button type="button" class="sm:hidden js-nav-show">
+					<img
+						class="w-8"
+						src="/src/assets/images/icon-hamburger.svg"
+						alt="Mobile nav open button"
+					/>
+				</button>
+			</nav>
+		</header>
+
+		<main class="overflow-hidden">
+			<!-- HERO -->
+			<section class="hero js-hero">
+				<div class="container max-w-screen-lg py-96 sm-max:py-72 sm-max:pt-20">
+					<div
+						class="flex md-max:flex-col md-max:space-y-10 md-max:text-center md-max:items-center md:justify-between md:space-x-16"
+					>
+						<h1 class="text-3xl md-max:text-2xl js-hero-header">About</h1>
+						<div class="flex flex-col justify-between max-w-730 js-hero-text">
+							<div
+								class="decoration-line decoration-line--coral mb-16 md-max:hidden"
+							></div>
+							<p class="md-max:text-sm">
+								We help companies build dynamic teams made up of top global
+								talent. Using our network of passionate professionals we drive
+								innovation and deliver incredible outcomes. Talented, diverse
+								teams shape the best products and experiences. We'll bring those
+								teams to you.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- DIRECTORS -->
+			<section class="directors pt-56 pb-60 js-directors">
+				<div class="container max-w-screen-lg">
+					<h2 class="text-xl text-center mb-24 js-directors-header">
+						Meet the directors
+					</h2>
+					<ul
+						class="grid grid-cols-3 gap-x-12 gap-y-20 place-items-center [&>*]:w-full md-max:grid-cols-2 sm-max:grid-cols-1 js-directors-list"
+					></ul>
+				</div>
+			</section>
+			<!-- CLIENTS -->
+			<section class="clients bg-state-green py-56 js-clients">
+				<div class="container max-w-screen-lg">
+					<div class="space-y-28">
+						<h2 class="text-xl font-semibold text-center js-clients-header">
+							Some of our clients
+						</h2>
+						<section
+							class="splide js-clients-carousel !visible"
+							aria-label="Clients brands carousel"
+						>
+							<div class="splide__track overflow-hidden">
+								<ul
+									class="sm-max:!flex sm-max:flex-col sm-max:justify-center sm-max:items-center space-y-32 sm-max:[&>*]:w-1/3 [&>*]:object-contain splide__list js-clients-list"
+								>
+									<li class="splide__slide">
+										<img
+											src="/src/assets/images/logo-the-verge.png"
+											alt="Client logo"
+										/>
+									</li>
+									<li class="splide__slide">
+										<img
+											src="/src/assets/images/logo-jakarta-post.png"
+											alt="Client logo"
+										/>
+									</li>
+									<li class="splide__slide">
+										<img
+											src="/src/assets/images/logo-the-guardian.png"
+											alt="Client logo"
+										/>
+									</li>
+									<li class="splide__slide">
+										<img
+											src="/src/assets/images/logo-tech-radar.png"
+											alt="Client logo"
+										/>
+									</li>
+									<li class="splide__slide">
+										<img
+											src="/src/assets/images/logo-gadgets-now.png"
+											alt="Client logo"
+										/>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+			<!-- GET STARTED -->
+			<section class="get-started bg-coral py-32">
+				<div class="container max-w-screen-lg">
+					<div
+						class="flex justify-between sm-max:flex-col sm-max:items-center sm-max:space-y-10"
+					>
+						<h2 class="text-xl text-state-green md-max:text-l">
+							Ready to get started?
+						</h2>
+						<a href="/pages/contact.html">
+							<button class="btn btn--dark">contact us</button>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer bg-dark-green py-20">
+			<div class="container max-w-screen-lg">
+				<div
+					class="grid gap-x-48 grid-cols-footer-desktop grid-rows-footer-desktop md-max:grid-cols-2 md-max:gap-x-4 md-max:gap-y-12 sm-max:grid-cols-1 sm-max:place-items-center"
+				>
+					<!-- Links -->
+					<div class="flex flex-col space-y-10 md:row-start-1 md:row-end-3">
+						<a href="/index.html">
+							<img
+								class="h-16 mr-auto md-max:h-10 sm-max:mx-auto"
+								src="/src/assets/images/logo.svg"
+								alt="Logo"
+							/>
+						</a>
+						<ul class="list-none flex space-x-16">
+							<li class="hover:text-coral">
+								<a href="/index.html">home</a>
+							</li>
+							<li class="hover:text-coral text-coral">
+								<a href="/pages/about.html">about</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Contact -->
+					<div
+						class="opacity-60 text-sm md-max:flex md-max:justify-end items-end md-max:text-right md:row-start-1 md:row-end-3 sm-max:text-center"
+					>
+						<p>
+							987 Hillcrest Lane<br />Irvine, CA<br />California 92714<br />Call
+							Us : 949-833-7432
+						</p>
+					</div>
+					<!-- Social icons -->
+					<ul
+						class="list-none flex place-content-end space-x-6 md-max:place-content-start"
+					>
+						<li>
+							<a href="#">
+								<img
+									class="w-10 h-10"
+									src="/src/assets/images/icon-facebook.svg"
+									alt="Icon facebook"
+								/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img
+									class="w-10 h-10"
+									src="/src/assets/images/icon-pinterest.svg"
+									alt="Icon pinterest"
+								/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img
+									class="w-10 h-10"
+									src="/src/assets/images/icon-twitter.svg"
+									alt="Icon twitter"
+								/>
+							</a>
+						</li>
+					</ul>
+					<!-- Copyright -->
+					<div
+						class="flex place-items-end place-content-end text-sm text-center font-semibold opacity-60 sm:text-right md:col-start-3"
+					>
+						<p>Copyright 2020. All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
