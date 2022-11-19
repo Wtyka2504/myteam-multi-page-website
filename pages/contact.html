@@ -72,13 +72,15 @@
 			<section class="contact js-contact">
 				<div class="container max-w-screen-lg py-96 sm-max:py-72 sm-max:pt-20">
 					<div
-						class="grid grid-cols-1 text-center lg:text-left lg:grid-cols-2 gap-24 lg-max:max-w-540 lg-max:mx-auto"
+						class="grid grid-cols-1 lg:text-left lg:grid-cols-2 gap-24 lg-max:max-w-540 lg-max:mx-auto"
 					>
 						<div class="flex flex-col">
-							<h2 class="text-2xl font-bold mb-16 js-header">Contact</h2>
-							<h3 class="text-l font-bold text-coral mb-16 js-header">
-								Ask us about
-							</h3>
+							<div class="text-center lg:text-left">
+								<h2 class="text-2xl font-bold mb-16 js-header">Contact</h2>
+								<h3 class="text-l font-bold text-coral mb-16 js-header">
+									Ask us about
+								</h3>
+							</div>
 							<ul class="space-y-4 js-list">
 								<li>
 									<div class="flex items-center space-x-10">
@@ -117,48 +119,62 @@
 										autocomplete="off"
 									/>
 									<span class="label-text">Name</span>
+									<span
+										class="text-red-700 peer-[:not(.wrong)]:hidden js-input-message"
+									></span>
 								</label>
 								<label class="label">
 									<input
 										type="text"
 										name="email"
-										class="input"
+										class="input peer"
 										placeholder=" "
 										autocomplete="off"
 									/>
 									<span class="label-text">Email address</span>
-									<span class="text-red-700"></span>
+									<span
+										class="text-red-700 peer-[:not(.wrong)]:hidden js-input-message"
+									></span>
 								</label>
 								<label class="label">
 									<input
 										type="text"
 										name="company"
-										class="input"
+										class="input peer"
 										placeholder=" "
 										autocomplete="off"
 									/>
 									<span class="label-text">Company name</span>
+									<span
+										class="text-red-700 peer-[:not(.wrong)]:hidden js-input-message"
+									></span>
 								</label>
 								<label class="label">
 									<input
 										type="text"
 										name="title"
-										class="input"
+										class="input peer"
 										placeholder=" "
 										autocomplete="off"
 									/>
 									<span class="label-text">Title</span>
+									<span
+										class="text-red-700 peer-[:not(.wrong)]:hidden js-input-message"
+									></span>
 								</label>
 								<label class="label">
 									<textarea
 										type="text"
 										rows="2"
 										name="message"
-										class="textarea"
+										class="textarea peer"
 										placeholder=" "
 										autocomplete="off"
 									></textarea>
 									<span class="label-text">Message</span>
+									<span
+										class="text-red-700 peer-[:not(.wrong)]:hidden js-input-message"
+									></span>
 								</label>
 								<label class="label">
 									<button class="btn btn--secondary">Submit</button>

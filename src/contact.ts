@@ -2,12 +2,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { screens } from "./scripts/constant/screens";
 import { animations } from "./scripts/constant/animations";
+import { FormValidator, Yup } from "./scripts/form";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.defaults({ ease: "power2.inOut" });
 
 const section = document.querySelector(".js-contact") as HTMLElement;
-const form = section.querySelector(".js-form") as HTMLElement;
+const form = section.querySelector(".js-form") as HTMLFormElement;
 const isMobile = matchMedia(`(max-width: ${screens.sm})`).matches;
 const scrollTriggerProps = {
 	start: "top center",
@@ -54,6 +55,37 @@ const init = () => {
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
 	});
+	new FormValidator(
+		{
+			form: form,
+			validations: [
+				Yup("name").min(5, "Zbyt mało znaków").max(10, "Zbyt dużo znaków"),
+				Yup("email").min(1, "Zbyt mało znaków").max(8, "Zbyt dużo znaków"),
+			],
+		},
+		{
+			onSubmit: () => {
+				console.log(123);
+			},
+			onInput: (element, errors) => {
+				const parent = element.parentElement as Element;
+				const labelText = parent.querySelector(".js-input-message") as Element;
+				let isWrong = false;
+				if (errors.empty) return element.classList.remove("wrong");
+				for (const key in errors) {
+					const value = errors[key];
+					if (value) {
+						element.classList.add("wrong");
+						labelText.textContent = value.toString();
+						isWrong = true;
+						break;
+					}
+				}
+				if (isWrong) return;
+				element.classList.remove("wrong");
+			},
+		}
+	);
 };
 
 init();
