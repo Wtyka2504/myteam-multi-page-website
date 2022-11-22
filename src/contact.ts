@@ -2,7 +2,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { screens } from "./scripts/constant/screens";
 import { animations } from "./scripts/constant/animations";
-import { FormValidator, Yup } from "./scripts/form";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.defaults({ ease: "power2.inOut" });
@@ -48,44 +47,68 @@ const pageAnime = () => {
 		delay: 0.2,
 	});
 };
+const enableWrongField = (
+	field: HTMLInputElement | HTMLTextAreaElement,
+	message: string
+) => {
+	const label = field.closest(".label") as HTMLLabelElement;
+	const span = label.querySelector(".js-input-message") as HTMLSpanElement;
 
-const init = () => {
-	pageAnime();
+	field.classList.add("wrong");
+	span.textContent = message;
+};
+const disableWrongField = (field: HTMLInputElement | HTMLTextAreaElement) => {
+	const label = field.closest(".label") as HTMLLabelElement;
+	const span = label.querySelector(".js-input-message") as HTMLSpanElement;
+
+	field.classList.remove("wrong");
+	span.textContent = "";
+};
+const formSubmit = (fields: { [name: string]: string }) => {
+	console.log(fields);
+};
+const isEmailCorrect = (string: string) => {
+	return /^[^@\s]+@[^@\s]+\.[^@\s]+$/gim.test(string);
+};
+const formInit = () => {
+	const name = form.elements.namedItem("name") as HTMLInputElement;
+	const email = form.elements.namedItem("email") as HTMLInputElement;
+	const company = form.elements.namedItem("company") as HTMLInputElement;
+	const title = form.elements.namedItem("title") as HTMLInputElement;
+	const message = form.elements.namedItem("message") as HTMLTextAreaElement;
+
+	[name, message, email].forEach((field) => {
+		field.addEventListener("focusin", () => disableWrongField(field));
+	});
 
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
-	});
-	new FormValidator(
-		{
-			form: form,
-			validations: [
-				Yup("name").min(5, "Zbyt mało znaków").max(10, "Zbyt dużo znaków"),
-				Yup("email").min(1, "Zbyt mało znaków").max(8, "Zbyt dużo znaków"),
-			],
-		},
-		{
-			onSubmit: () => {
-				console.log(123);
-			},
-			onInput: (element, errors) => {
-				const parent = element.parentElement as Element;
-				const labelText = parent.querySelector(".js-input-message") as Element;
-				let isWrong = false;
-				if (errors.empty) return element.classList.remove("wrong");
-				for (const key in errors) {
-					const value = errors[key];
-					if (value) {
-						element.classList.add("wrong");
-						labelText.textContent = value.toString();
-						isWrong = true;
-						break;
-					}
-				}
-				if (isWrong) return;
-				element.classList.remove("wrong");
-			},
+		let isFormCorrect = true;
+		[name, message, email].forEach((field) => {
+			const value = field.value.trim();
+			if (value) return;
+			enableWrongField(field, "This field is required");
+			isFormCorrect = false;
+		});
+		if (!isEmailCorrect(email.value.trim())) {
+			isFormCorrect = false;
+			enableWrongField(email, "Please use a valid email address");
 		}
-	);
+		console.log(isEmailCorrect(email.value.trim()));
+		if (!isFormCorrect) return;
+
+		formSubmit({
+			name: name.value,
+			email: email.value,
+			company: company.value,
+			title: title.value,
+			message: message.value,
+		});
+	});
+};
+const init = () => {
+	pageAnime();
+	formInit();
 };
 
 init();
