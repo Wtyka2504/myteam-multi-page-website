@@ -1,20 +1,6 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-
-const pageData = {
-	"/index.html": {
-		title: "My team",
-		page: "home",
-	},
-	"/pages/about.html": {
-		title: "My team - About",
-		page: "about",
-	},
-	"/pages/contact.html": {
-		title: "My team - Contact",
-		page: "contact",
-	},
-};
+import autoprefixer from "autoprefixer";
 
 export default defineConfig({
 	build: {
