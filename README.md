@@ -43,13 +43,13 @@ Users should be able to:
 
 ## Tech stack:
 
-<p align="center">
-    <img src="/public/html-1.svg" width="50" style="margin: 0px 15px;">
-    <img src="/public/sass-1.svg" width="50"  style="margin: 0px 15px;">
-    <img src="/public/tailwind-css-1.svg" width="50"  style="margin: 0px 15px;">
-    <img src="/public/typescript.svg" width="50"  style="margin: 0px 15px;">
-</p>
+<div style="display: flex; justify-content:center; gap:12px;">
+  <img src="/public/html-1.svg" width="50">
+  <img src="/public/sass-1.svg" width="50">
+  <img src="/public/tailwind-css-1.svg" width="50">
+  <img src="/public/typescript.svg" width="50">
+</div>
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Profile](https://www.frontendmentor.io/profile/Wtyka2504)
