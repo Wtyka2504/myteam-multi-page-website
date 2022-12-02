@@ -44,10 +44,10 @@ Users should be able to:
 ## Tech stack:
 
 <p align="center">
-    <img src="/public/html-1.svg" width="50">
-    <img src="/public/sass-1.svg" width="50">
-    <img src="/public/tailwind-css-1.svg" width="50">
-    <img src="/public/typescript.svg" width="50">
+    <img src="/public/html-1.svg" width="50" style="margin: 0px 15px;">
+    <img src="/public/sass-1.svg" width="50"  style="margin: 0px 15px;">
+    <img src="/public/tailwind-css-1.svg" width="50"  style="margin: 0px 15px;">
+    <img src="/public/typescript.svg" width="50"  style="margin: 0px 15px;">
 </p>
 
 ## Author
