@@ -4,6 +4,9 @@
 	"version": "0.0.0",
 	"type": "module",
 	"main": "/src",
+	"browserslist": [
+		"last 2 versions"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
